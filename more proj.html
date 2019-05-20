@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel= "Stylesheet" type="text/css" href= "style.css">
+<link rel= "Stylesheet" type="text/css" href= "style1.css">
+<meta name= "viewpoint" content="width= device-width, initial-scale= 1" >
+<title>bsc-inf-07-17 assignment 1</title>
+<script type="text/javascript" >
+	
+        onload = function(){
+
+var myP = JSON.parse(localStorage.getItem("myProo"));
+console.log(myP.length);
+
+for (var i = 0; i < myP.length;i++){
+var div  = document.createElement("div");
+div.style.border = "solid";
+div.style.margin = "3px";
+
+
+div. innerHTML ="Project name  "+ "<br>" + myP[i].Pname + "<br>" +"Current status " + "<br>" + myP[i].status 
+"<br>" +"Started on "  + "<br>"+ myP[i].Start +  "<br>" +"Finished on " + "<br>" + myP[i].end + "<br>" +"description  "+ "<br>" + myP[i].description  ;
+
+
+document.getElementById("disp").appendChild(div);
+
+       
+        
+}
+        }
+
+
+</script>
+</head>
+
+<body>
+    <div class = "section">
+        <h1> Projects </h1>
+        <div id = "disp">
+</div>
+
+</div>
+
+   </body>
+</html>

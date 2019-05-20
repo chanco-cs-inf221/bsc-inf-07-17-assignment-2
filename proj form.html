@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel= "Stylesheet" type="text/css" href= "style.css">
+<link rel= "Stylesheet" type="text/css" href= "style1.css">
+<meta name= "viewpoint" content="width= device-width, initial-scale= 1" >
+<title>bsc-inf-07-17 assignment 1</title>
+
+</head>
+
+<body>
+</div>
+
+		<div class= "section" >
+			<h1> Projects </h1>
+
+			<form>
+				<div class="formBox">
+					<lebel for="pname">Project name</lebel><br>
+					<input type="text" id="pname" placeholder="Project name"><br>
+				</div>
+
+				<div class="formBox">
+					<lebel for="start">started on</lebel><br>
+					<input type="date" id="start" placeholder="start"><br>
+				</div>
+
+				
+				<div class="formBox">
+					<lebel for="end">ended on</lebel><br>
+					<input type="date" id="end" placeholder="end"><br>
+				</div>
+
+				<div class="formBox">
+				<label for="status">status</label><br>
+				<select id="status" name="status">
+					<option value = "underway">underway</option>
+					<option value = "submited">submited</option>
+					<option value = "completed">completed</option>
+					</select><br>
+				</div>
+
+				
+				<div class="formBox">
+				<label for="description">description</label><br>
+				<textarea id ="description" name = "description" row = "10" cols = "10" ></textarea></br>
+					</div>
+
+					<button id = "submit"> submit </button> 
+
+			</form>
+
+					
+		</div>
+		
+	
+<script type="text/javascript">
+	let Proj= [];
+
+	const addproj = (ev) => {
+			ev.preventDefault();
+			let pjct = {
+				Pname : document.getElementById('pname').value,
+				Start : document.getElementById('start').value,
+				end   : document.getElementById('end').value,
+				status  : document.getElementById('status').value,
+				description  : document.getElementById('description').value,
+				
+			}
+
+			Proj.push(pjct);
+			document.forms[0].reset();
+
+			console.warn('added', {Proj});
+			let pre = document.querySelector('#dis');
+			//pre.textContent = '\n', JSON.stringify(Proj, '\t', 2);
+
+			localStorage.setItem('myProo', JSON.stringify(Proj));
+	}
+
+			document.addEventListener('DOMContentLoaded',() => {
+				document.getElementById('submit').addEventListener('click', addproj)
+			}
+
+			)
+
+for(var i = 0; i < Proj.length; i++ ){
+	output.innerHTML += localStorage.getItem('myproo')
+	 
+}
+</script>
+
+
+</html>
+
+

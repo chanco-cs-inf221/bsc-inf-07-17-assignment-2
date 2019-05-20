@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>assignment 2</title>
+        <link rel= "Stylesheet" type="text/css" href= "style.css">
+<link rel= "Stylesheet" type="text/css" href= "style1.css">
+<meta name= "viewpoint" content="width= device-width, initial-scale= 1" >
+<title>bsc-inf-07-17 assignment 2</title>
+
+    </head>
+    <body>
+        
+        <div class= "section" >
+            <h1>Work experience</h1>
+        <form>
+                    <div class="formBox">
+                        <lebel for="pname">Company worked</lebel><br>
+                        <input type="text" id="pname" placeholder="Company worked"><br>
+                    </div>
+
+                    <div class="formBox">
+                    <label for="status">worked as</label><br>
+                    <select id="status" name="status">
+                    	<option value = "intern">intern</option>
+                    	<option value = "part time">part time</option>
+                    	<option value = "full time">full time</option>
+                    	</select><br>
+                    </div>
+
+                    
+                    <div class="formBox">
+                    <label for="description">description</label><br>
+                    <textarea id ="description" name = "description" row = "10" cols = "10" ></textarea></br>
+                        </div>
+
+                        <button id = "submit"> submit </button> 
+
+                </form>
+        </div>
+<div id="dis">
+</div>
+    </body>
+    <script type="text/javascript">
+                            let Exp= [];
+
+                            const addExp = (ev) => {
+                                    ev.preventDefault();
+                                    let pjct = {
+                                        Organization : document.getElementById('pname').value,
+                                        status  : document.getElementById('status').value,
+                                        description  : document.getElementById('description').value,
+                                        
+                                    }
+
+                                    Exp.push(pjct);
+                                    document.forms[0].reset();
+
+                                    console.warn('added', {Exp});
+                                    let pre = document.querySelector('#dis');
+                                    pre.textContent = '\n', JSON.stringify(Exp, '\t', 2);
+
+                                    localStorage.setItem('myExp', JSON.stringify(Exp));
+                            }
+
+                                    document.addEventListener('DOMContentLoaded',() => {
+                                        document.getElementById('submit').addEventListener('click', addExp)
+                                    }
+
+                                    )
+
+
+    </script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel= "Stylesheet" type="text/css" href= "style.css">
+<link rel= "Stylesheet" type="text/css" href= "style1.css">
+<meta name= "viewpoint" content="width= device-width, initial-scale= 1" >
+<title>bsc-inf-07-17 assignment 1</title>
+<script type="text/javascript" >
+onload = function(){
+
+   
+var myE = JSON.parse(localStorage.getItem("myExp"));
+console.log(myE.length);
+ 
+ for (var i = 0; i < myE.length;i++){
+	 var div  = document.createElement("div");
+	 div.style.border = "solid";
+	 div.style.margin = "3px";
+	 
+
+	 div. innerHTML =("worked with " + "<br>" + myE[i].Organization + "<br>" + "worked as " + "<br>" + myE[i].status + "<br>" +"description " + "<br>" + myE[i].description  );
+	 
+
+	 document.getElementById("display").appendChild(div);
+
+	  }
+}
+</script>
+</head>
+
+<body>
+    <div class= "section" >
+        <h1> work experience </h1>
+
+        <div id="display">
+
+        </div>
+    </div>
+</body>
+</html>

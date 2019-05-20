@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel= "Stylesheet" type="text/css" href= "style.css">
+<link rel= "Stylesheet" type="text/css" href= "style1.css">
+<meta name= "viewpoint" content="width= device-width, initial-scale= 1" >
+<title>home</title>
+<script type="text/javascript" >
+		onload = function(){
+
+			var myP = JSON.parse(localStorage.getItem("myProo"));
+console.log(myP.length);
+ 
+for (var i = 0; i < myP.length;i++){
+	 var div  = document.createElement("div");
+	 div.style.border = "solid";
+	 div.style.margin = "3px";
+	 div.style.backgroundColor = "aqua";
+
+	 div. innerHTML = "<a href=\"more proj.html\">"+ myP[i].Pname +"</a>"  ;
+	 
+	
+	 document.getElementById("disp").appendChild(div);
+	
+
+
+
+	  }
+ 
+
+
+
+var myE = JSON.parse(localStorage.getItem("myExp"));
+console.log(myE.length);
+ 
+ for (var i = 0; i < myE.length;i++){
+	 var div  = document.createElement("div");
+	 div.style.border = "solid";
+	 div.style.margin = "3px";
+	 div.style.backgroundColor = "aqua";
+	 
+
+	 div. innerHTML =("<a href=\"more Exp.html\">"+ myE[i].Organization +"</a>"   + "<br>" );
+	 
+
+	 document.getElementById("display").appendChild(div);
+	 
+
+	  }
+
+	
+
+
+
+
+        
+}
+
+</script>
+</head>
+
+<body>
+	
+<div class= "section ">
+			<h1> Yambanso kausiwa - chanco Student</h1>
+			<div class="space">
+					<img src= yamba.jpg>
+			  
+		<div class= "links">
+	  
+					<a href= "http://github.com/yambanso">github </a>
+					<a href= "http://facebook.com/Yamba Nso">facebook </a>
+					<a href= "http://gmail.com/bsc-inf-07-17@cc.ac.mw">Email </a>
+		</div>				
+</div>
+</div>
+
+		<div class= "section" >
+			<h1> Projects </h1>
+
+			<div id="disp"> </div>
+				
+				
+				
+				
+					
+		
+				<a href= "proj form.html">ADD Project</a>
+
+		</div>
+
+		
+		<div class= "section" >
+				<h1>Work experience</h1>
+
+		<div id= "display"></div>
+	
+	
+					<a href= "xp form.html">ADD Exp</a>
+	
+		
+			</div>
+		</div>
+</body>
+</html>
+
+
